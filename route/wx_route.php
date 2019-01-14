@@ -6,4 +6,5 @@
  * Time: 09:08
  */
 
-Route::get('wx/index', 'wx/index');
+//wx publicSign
+Route::get('api/token', 'wxApi/getAccessToken');

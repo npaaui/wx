@@ -22,7 +22,7 @@ class Wx
 
     public function __construct()
     {
-        $this->config = Config::get('wx.publicSign');
+        $this->config = Config::get('wx.common', null);
         //微信消息入口
         $this->weChat = new WeChat($this->config);
         $this->weChat->access();

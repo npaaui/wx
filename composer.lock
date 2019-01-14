@@ -4,20 +4,61 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "296bd8a1d28e39d56dcd80ce7be249f3",
+    "content-hash": "c121f4315b65e2290965d7afe2d1a4ab",
     "packages": [
         {
-            "name": "topthink/framework",
-            "version": "v5.1.31",
+            "name": "npaaui/wechat-sdk-php",
+            "version": "1.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/top-think/framework.git",
-                "reference": "93339b1a4df5a73e0143db0847a4c5e0b2e46fb0"
+                "url": "https://github.com/npaaui/weixin-sdk.git",
+                "reference": "25a5dd35ef5f496405bc0755e9d4f9e286e722a6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/top-think/framework/zipball/93339b1a4df5a73e0143db0847a4c5e0b2e46fb0",
-                "reference": "93339b1a4df5a73e0143db0847a4c5e0b2e46fb0",
+                "url": "https://api.github.com/repos/npaaui/weixin-sdk/zipball/25a5dd35ef5f496405bc0755e9d4f9e286e722a6",
+                "reference": "25a5dd35ef5f496405bc0755e9d4f9e286e722a6",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Npaaui\\WeChat\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "npaaui",
+                    "email": "1059015328@qq.com"
+                }
+            ],
+            "description": "微信公众平台开发包-php版",
+            "keywords": [
+                "wechat",
+                "weixin",
+                "weixin-sdk-php"
+            ],
+            "time": "2019-01-08T15:10:36+00:00"
+        },
+        {
+            "name": "topthink/framework",
+            "version": "v5.1.32",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/top-think/framework.git",
+                "reference": "88a2ab625b35e047896718db320e08375cf021da"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/top-think/framework/zipball/88a2ab625b35e047896718db320e08375cf021da",
+                "reference": "88a2ab625b35e047896718db320e08375cf021da",
                 "shasum": ""
             },
             "require": {
@@ -55,7 +96,7 @@
                 "orm",
                 "thinkphp"
             ],
-            "time": "2018-12-09T12:41:21+00:00"
+            "time": "2018-12-23T13:42:11+00:00"
         },
         {
             "name": "topthink/think-installer",
