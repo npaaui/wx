@@ -8,30 +8,20 @@
 
 namespace app\index\controller;
 
+use app\index\model\cookingModel;
 
 class Cooking
 {
+    /**
+     * @return string
+     * @throws \think\db\exception\DataNotFoundException
+     * @throws \think\db\exception\ModelNotFoundException
+     * @throws \think\exception\DbException
+     */
     public function getCookingList()
     {
-        $data = array(
-            'code' => 0000,
-            'data' => array(
-                array(
-                    'id' => 1,
-                    'name' => '清炒土豆丝',
-                    'cook_id' => 1,
-                    'img' => 'image',
-                    'price' => 2.99,
-                ),
-                array(
-                    'id' => 2,
-                    'name' => '西红柿炒蛋',
-                    'cook_id' => 1,
-                    'img' => 'image',
-                    'price' => 4.59,
-                ),
-            ),
-        );
+        $data = cookingModel::cookingList();
+
         $jsonData = json_encode($data);
         return $jsonData;
     }
