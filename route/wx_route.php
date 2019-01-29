@@ -8,7 +8,3 @@
 
 //wx publicSign
 Route::get('api/token', 'wxApi/getAccessToken');
-
-
-//wx miniProgram
-Route::get('cooking/list', 'cooking/getCookingList');
