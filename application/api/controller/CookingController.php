@@ -10,6 +10,7 @@ namespace app\api\controller;
 
 use app\api\validate\CookingValidate;
 use app\common\model\CookingModel;
+use app\common\model\CookingStepModel;
 
 class CookingController extends ApiBaseController
 {
@@ -28,7 +29,14 @@ class CookingController extends ApiBaseController
      */
     public function getCookingOne($id)
     {
-        $ret = $this->cookingModel->get($id);
+        $ret = $this->cookingModel
+            ->field('n_cooking.*,n_user.name as user_name')
+            ->join('n_user', 'n_user.id=n_cooking.user_id')
+            ->get($id);
+
+        $cookingStepM = new CookingStepModel();
+        $ret['step'] = $cookingStepM->where('cooking_id', $ret['id'])
+            ->all();
 
         return $this->_out(self::SUCCESS, $ret);
     }
@@ -40,14 +48,21 @@ class CookingController extends ApiBaseController
      * @return string
      * @throws \think\Exception\DbException
      */
-    public function getCookingList($q = '', $page = 1, $pageSize = 10)
+    public function getCookingList($q = '', $page = 1, $pageSize = 5)
     {
         $this->_setPage($page, $pageSize);
 
-        $ret['list'] = $this->cookingModel
+        $ret['total'] = $this->cookingModel
             ->where('name', 'like',"%$q%")
+            ->count();
+
+        $ret['list'] = $this->cookingModel
+            ->field('n_cooking.*,n_user.name as user_name')
+            ->join('n_user', 'n_user.id=n_cooking.user_id')
+            ->where('n_cooking.name', 'like',"%$q%")
             ->limit($this->offset, $this->limit)
             ->all();
+
 
         return $this->_out(self::SUCCESS, $ret);
     }
