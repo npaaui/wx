@@ -17,11 +17,17 @@ class ErrorCodeController
     const SUCCESS = 0000;
     const SYSTEM_ERROR = 0001;
     const PARAM_VALIDATE_ERROR = 0002;
+    
+    //用户相关
+    const USER_LOGIN_FAIL = 1001;
 
     private $msgArray = array(
-        self::SUCCESS => "成功",
-        self::SYSTEM_ERROR => "系统内部错误",
-        self::PARAM_VALIDATE_ERROR => "非法参数请求",
+        self::SUCCESS => '成功',
+        self::SYSTEM_ERROR => '系统内部错误',
+        self::PARAM_VALIDATE_ERROR => '非法参数请求',
+        
+        //用户相关
+        self::USER_LOGIN_FAIL => '登录失败',
     );
 
     public function setCodeMsg($code, $msg = '')

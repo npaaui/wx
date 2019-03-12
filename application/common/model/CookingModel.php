@@ -11,7 +11,7 @@ namespace app\common\model;
 
 use think\Model;
 
-class CookingModel extends Model
+class CookingModel extends BaseModel
 {
 
     protected $pk = 'n_cooking.id';

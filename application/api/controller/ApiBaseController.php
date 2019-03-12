@@ -21,6 +21,13 @@ class ApiBaseController extends ErrorCodeController
         $this->limit = $pageSize;
     }
 
+    public function _in()
+    {
+        $content = file_get_contents('php://input');
+        $data = json_decode($content, true);
+        return $data;
+    }
+
     public function _out($code, $data, $msg = '')
     {
         $this->setCodeMsg($code, $msg);

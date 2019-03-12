@@ -1,6 +1,12 @@
 <?php
 /* Api route */
 
+/**
+ * user
+ */
+Route::get('api/user', 'Api/User/getUserOne');
+Route::post('api/user', 'Api/User/insertUser');
+Route::put('api/user', 'Api/User/updateUser');
 
 /**
  * cooking

@@ -11,7 +11,7 @@ namespace app\common\model;
 
 use think\Model;
 
-class CookingStepModel extends Model
+class CookingStepModel extends BaseModel
 {
 
 }
